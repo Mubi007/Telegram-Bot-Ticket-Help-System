@@ -91,7 +91,7 @@ This bot transforms your customer support operations by providing:
 ## 🏗️ Technical Architecture
 
 ```
-tg/
+/
 ├── bot.py              # Main application entry point
 ├── config.py           # Configuration and settings management
 ├── database.py         # Database operations and data layer
