@@ -12,6 +12,79 @@ This bot transforms your customer support operations by providing:
 - **Scalable Architecture**: Handles multiple users and tickets simultaneously
 - **Professional Interface**: User-friendly design with intuitive navigation
 
+  ## 🏗️ Technical Architecture
+
+```
+/
+├── bot.py              # Main application entry point
+├── config.py           # Configuration and settings management
+├── database.py         # Database operations and data layer
+├── requirements.txt    # Project dependencies
+├── handlers/           # Event handlers and business logic
+│   ├── common.py      # Common handlers and role management
+│   ├── user.py        # Client-side handlers
+│   ├── agent.py       # Support agent handlers
+│   ├── admin.py       # Administrative handlers
+│   └── admin_callbacks.py # Advanced admin functionality
+├── keyboards/          # User interface components
+│   ├── user.py        # Inline keyboards for clients
+│   ├── admin.py       # Administrative inline keyboards
+│   └── reply.py       # Reply keyboards for all roles
+├── utils/             # Utility functions and helpers
+│   └── texts.py       # Message templates and text content
+└── data/              # Data storage
+    └── support.db     # SQLite database for persistence
+```
+
+## 🔧 Technical Features
+
+### 🛠️ Development Stack
+- **Python 3.11.9**: Modern Python with performance optimizations
+- **aiogram 3**: Latest Telegram Bot API framework
+- **SQLite**: Lightweight, reliable database
+- **asyncio**: Asynchronous programming for high performance
+- **FSM**: Finite State Machine for conversation management
+
+  ## 🚀 Installation and Setup
+
+### 1. Dependencies Installation
+```bash
+pip install -r requirements.txt
+```
+
+### 2. Configuration
+Create a `.env` file in the project root:
+```env
+BOT_TOKEN=your_bot_token_here
+```
+
+### 3. User Role Configuration
+Configure administrators and agents in `config.py`:
+```python
+# Administrator IDs (full permissions)
+ADMINS = [123456789, 987654321]  # Replace with actual IDs
+
+# Support agent IDs (ticket processing)
+AGENTS = [111111111, 222222222]  # Add agent IDs
+```
+
+**How to find your ID:**
+- Send `/start` to @userinfobot
+- Or use `/role` command in your bot after launch
+
+### 4. Launch
+```bash
+python bot.py
+```
+
+### 5. Enterprise Features
+After launch, administrators gain access to:
+- **Data Export**: CSV files with statistics, tickets, and users
+- **Backup Management**: Automated database backups and recovery
+- **User Management**: View lists, modify roles, block/unblock users
+- **Advanced Analytics**: Comprehensive support service performance reports
+
+
 ## 🏢 Enterprise Features
 
 ### 📊 Advanced Admin Panel
@@ -88,39 +161,6 @@ This bot transforms your customer support operations by providing:
 - **Data Protection**: Secure storage and backup of sensitive information
 - **Compliance Ready**: Built-in features for regulatory requirements
 
-## 🏗️ Technical Architecture
-
-```
-/
-├── bot.py              # Main application entry point
-├── config.py           # Configuration and settings management
-├── database.py         # Database operations and data layer
-├── requirements.txt    # Project dependencies
-├── handlers/           # Event handlers and business logic
-│   ├── common.py      # Common handlers and role management
-│   ├── user.py        # Client-side handlers
-│   ├── agent.py       # Support agent handlers
-│   ├── admin.py       # Administrative handlers
-│   └── admin_callbacks.py # Advanced admin functionality
-├── keyboards/          # User interface components
-│   ├── user.py        # Inline keyboards for clients
-│   ├── admin.py       # Administrative inline keyboards
-│   └── reply.py       # Reply keyboards for all roles
-├── utils/             # Utility functions and helpers
-│   └── texts.py       # Message templates and text content
-└── data/              # Data storage
-    └── support.db     # SQLite database for persistence
-```
-
-## 🔧 Technical Features
-
-### 🛠️ Development Stack
-- **Python 3.11.9**: Modern Python with performance optimizations
-- **aiogram 3**: Latest Telegram Bot API framework
-- **SQLite**: Lightweight, reliable database
-- **asyncio**: Asynchronous programming for high performance
-- **FSM**: Finite State Machine for conversation management
-
 ### 📱 User Interface
 - **Dual Interface**: Reply buttons + Inline keyboards
 - **Role-Based UI**: Adaptive interfaces for each user type
@@ -138,45 +178,6 @@ This bot transforms your customer support operations by providing:
 - **Data Export**: CSV format for external analysis
 - **Backup System**: Automated database backups
 - **Audit Logging**: Complete activity tracking
-
-## 🚀 Installation and Setup
-
-### 1. Dependencies Installation
-```bash
-pip install -r requirements.txt
-```
-
-### 2. Configuration
-Create a `.env` file in the project root:
-```env
-BOT_TOKEN=your_bot_token_here
-```
-
-### 3. User Role Configuration
-Configure administrators and agents in `config.py`:
-```python
-# Administrator IDs (full permissions)
-ADMINS = [123456789, 987654321]  # Replace with actual IDs
-
-# Support agent IDs (ticket processing)
-AGENTS = [111111111, 222222222]  # Add agent IDs
-```
-
-**How to find your ID:**
-- Send `/start` to @userinfobot
-- Or use `/role` command in your bot after launch
-
-### 4. Launch
-```bash
-python bot.py
-```
-
-### 5. Enterprise Features
-After launch, administrators gain access to:
-- **Data Export**: CSV files with statistics, tickets, and users
-- **Backup Management**: Automated database backups and recovery
-- **User Management**: View lists, modify roles, block/unblock users
-- **Advanced Analytics**: Comprehensive support service performance reports
 
 ## 🏢 Enterprise Deployment
 
