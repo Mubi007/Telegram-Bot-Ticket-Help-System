@@ -1,4 +1,4 @@
-# 🤖 Telegram Bot as Business Solution for Help Ticket System
+# Telegram Bot as Business Solution for Help Ticket System
 
 A comprehensive and professional Telegram bot designed as a complete business solution for customer support and help ticket management. Built with Python 3.11.9 using aiogram 3, this system provides a seamless communication bridge between clients and support teams.
 
